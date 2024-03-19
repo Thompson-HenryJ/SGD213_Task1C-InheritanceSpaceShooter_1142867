@@ -28,7 +28,6 @@ public class PlayerMovementScript : MonoBehaviour
         {
             Vector2 ForceToAdd=Vector2.right*HorizontalInput*f_horPlayAccel*Time.deltaTime;
             Rigidbody.AddForce(ForceToAdd);
-            //print(HorizontalInput);
         } 
     } 
 }
