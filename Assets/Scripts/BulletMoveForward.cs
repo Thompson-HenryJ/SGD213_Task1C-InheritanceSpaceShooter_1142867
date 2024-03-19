@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletMoveForward : MonoBehaviour {
+public class BulletMoveForward : MonoBehaviour 
+{
 
     private float acceleration = 50f;
 
     private float initialVelocity = 5f;
 
-    private Rigidbody2D ourRigidbody;
+    private Rigidbody2D Rigidbody;
 
     // Use this for initialization
     void Start()
     {
-        ourRigidbody = GetComponent<Rigidbody2D>();
+        Rigidbody = GetComponent<Rigidbody2D>();
 
-        ourRigidbody.velocity = Vector2.up * initialVelocity;
+        Rigidbody.velocity = Vector2.up * initialVelocity;
     }
 
     // Update is called once per frame
@@ -22,6 +23,6 @@ public class BulletMoveForward : MonoBehaviour {
     {
         Vector2 ForceToAdd = Vector2.up * acceleration * Time.deltaTime;
 
-        ourRigidbody.AddForce(ForceToAdd);
+        Rigidbody.AddForce(ForceToAdd);
     }
 }
