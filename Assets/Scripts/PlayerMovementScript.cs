@@ -3,31 +3,27 @@ using System.Collections;
 
 public class PlayerMovementScript : MonoBehaviour 
 {
-    // SerializeField exposes this value to the Editor, but not to other Scripts!
-    // It is "pseudo public"
-    // HorizontalPlayerAcceleration indicates how fast we accelerate Horizontally
-    [SerializeField]
-    private float f_horPlayAccel = 5000f;
+    
+    // Speed indicates how fast we accelerate Horizontally
+   
+    public float Speed = 5000f;
 
     private Rigidbody2D Rigidbody;
+
+    public Vector2 HorizontalInput { get; private set; }
 
     // Use this for initialization
     void Start() 
     {
-        // Get OurRigidbodyComponent once at the start of the game and store a reference to it
-        // This means that we don't need to call GetComponent more than once! This makes our game faster. (GetComponent is SLOW)
+        // Get RigidbodyComponent once at the start of the game and store a reference to it
         Rigidbody = GetComponent<Rigidbody2D>(); 
     }
 
-    // Update is called once per frame
-    void Update() 
+    //public announcement of movement action as used by the PlayerInputScript
+    public void HorizontalMovement (float HorizontalInput)
     {
-        float HorizontalInput = Input.GetAxis("Horizontal");
+        Vector2 ForceToAdd = Vector2.right * HorizontalInput * Speed * Time.deltaTime;
+        Rigidbody.AddForce(ForceToAdd);
+    }
 
-        if (HorizontalInput != 0.0f) 
-        {
-            Vector2 ForceToAdd=Vector2.right*HorizontalInput*f_horPlayAccel*Time.deltaTime;
-            Rigidbody.AddForce(ForceToAdd);
-        } 
-    } 
 }
