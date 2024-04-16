@@ -18,7 +18,7 @@ public class WeaponTripleShot : WeaponBase {
             // create 3 bullets
             for (int i = 0; i < 3; i++) {
                 // create our bullet
-                GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
+                GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position + new Vector3 (0,1,0), transform.rotation);
                 // set their direction
                 newBullet.GetComponent<MoveConstantly>().Direction = new Vector2(x + 0.5f * i, 0.5f);
             }

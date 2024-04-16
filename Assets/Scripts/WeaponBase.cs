@@ -16,7 +16,7 @@ public abstract class WeaponBase : MonoBehaviour
         get { return bullet; }
         set { bullet = value; }
     }
-
+   
     [Header("References")]
     [SerializeField]
     protected Transform bulletSpawnPoint;
@@ -28,7 +28,7 @@ public abstract class WeaponBase : MonoBehaviour
 
     // State
     protected float lastFiredTime = 0f;
-
+    
     /// <summary>
     /// Shoot is intended to be the access point for shooting mechanics. In concrete implementations it is intended that it 
     /// should only fire when enough time has passed compared to our fireDelay.
