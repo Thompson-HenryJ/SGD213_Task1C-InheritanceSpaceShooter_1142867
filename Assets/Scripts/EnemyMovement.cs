@@ -5,7 +5,8 @@ using UnityEngine;
 /// <summary>
 /// EnemyMovement handles all of the movement specifc state and behaviour for the enemy.
 /// </summary>
-public class EnemyMovement : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour 
+{
 
     // enemyAcceleration indicates how fast the enemy accelerates
     [SerializeField]
@@ -14,7 +15,8 @@ public class EnemyMovement : MonoBehaviour {
     // local references
     private Rigidbody2D ourRigidbody;
 
-    void Start() {
+    void Start() 
+    {
         // populate ourRigidbody
         ourRigidbody = GetComponent<Rigidbody2D>();
     }
