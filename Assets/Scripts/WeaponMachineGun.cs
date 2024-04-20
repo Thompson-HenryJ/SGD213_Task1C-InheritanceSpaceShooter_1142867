@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponMachineGun : WeaponBase {
+public class WeaponMachineGun : WeaponBase 
+{
 
     /// <summary>
     /// Shoot will spawn a new bullet, provided enough time has passed compared to our fireDelay.
@@ -15,7 +16,7 @@ public class WeaponMachineGun : WeaponBase {
         // if enough time has passed since our last shot compared to our fireDelay, spawn our bullet
         if (currentTime - lastFiredTime > fireDelay) {
             // create our bullet
-            GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position + new Vector3(0,1,0), transform.rotation);
+            GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
             // update our shooting state
             lastFiredTime = currentTime;
         }

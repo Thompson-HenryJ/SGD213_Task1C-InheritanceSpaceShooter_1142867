@@ -58,6 +58,7 @@ public class PlayerInput : MonoBehaviour
             }
             else
             {
+                //Attach note to Debug log for patching
                 Debug.Log("Attach shooting");
             }
         }
